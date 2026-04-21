@@ -21,8 +21,30 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pytest selenium webdriver-manager
+          pip install pytest-rerunfailures
+          run:
+            pip install pytest-rerunfailures allure-pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run tests
         # Для GitHub Actions браузер должен запускаться в headless режиме
-        run: pytest
+        if: always()
+        run: pytest --reruns 2 --alluredir=allure-results
+
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure_results: allure-results
+          gh_pages: gh-pages
+          allure_report: allure-report
+          allure_history: allure-history
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-report
