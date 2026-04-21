@@ -1,0 +1,23 @@
+Error closing modal: Message: 
+
+Error closing modal: Message: 
+Stacktrace:
+#0 0x557a2e354b6a <unknown>
+#1 0x557a2dd56265 <unknown>
+#2 0x557a2dda8f76 <unknown>
+#3 0x557a2dda91b1 <unknown>
+#4 0x557a2ddf47d4 <unknown>
+#5 0x557a2ddf1969 <unknown>
+#6 0x557a2dd9c5cf <unknown>
+#7 0x557a2dd9d391 <unknown>
+#8 0x557a2e31a04b <unknown>
+#9 0x557a2e31d00d <unknown>
+#10 0x557a2e306808 <unknown>
+#11 0x557a2e31dba0 <unknown>
+#12 0x557a2e2ed280 <unknown>
+#13 0x557a2e341db8 <unknown>
+#14 0x557a2e341f88 <unknown>
+#15 0x557a2e3535de <unknown>
+#16 0x7f831709caa4 <unknown>
+#17 0x7f8317129c6c <unknown>
+
